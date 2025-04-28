@@ -26,7 +26,9 @@ public class TestGaulois {
 		for(int i=0;i<4;i++) {
 			Asterix.frapper(brutus);
 		}
-	
+		Gaulois truc=new Gaulois("kenji",3);
+		truc.sePresenter();
+		
 	}
 
 }

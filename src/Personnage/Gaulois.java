@@ -1,16 +1,30 @@
 package Personnage;
 
+
+import Personnage.Village;
+
 public class Gaulois {
 	private String nom;
 	private int force;
 	private int effetPotion =1;
+	private Village village=null;
 	
 	public Gaulois(String nom , int force) {
 		this.nom = nom;
 		this.force = force;
 	}
 	
-	
+	public void sePresenter() {
+		if(village!=null&&this.village.getChef()==this) {
+			System.out.println(prendreParole()+"Bonjour , je m'appelle "+nom+" Je suis le chef du village : "+this.village.getNom());
+		}
+		if(village!=null&&this.village.getChef()!=this){
+			System.out.println(prendreParole()+"Bonjour , je m'appelle "+nom+" J'habite le village : "+this.village.getNom());
+		}
+		if(this.village==null) {
+			System.out.println(prendreParole()+"Bonjour , je m'appelle "+nom+" Je suis un gitan ");
+		}
+	}
 	
 	
 	@Override
@@ -50,4 +64,8 @@ public class Gaulois {
 		this.effetPotion = forcePotion;
 	}
 
+	public void setVillage(Village village) {
+		this.village=village;
+	}
+	
 }
